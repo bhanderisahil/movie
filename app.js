@@ -8,7 +8,17 @@ const multer  = require('multer')
 
 const adminrouter = require("./router/adminrouter")
 const userrouter = require("./router/userrouter")
-require("./config/mongoose")
+// require("./config/mongoose")
+const mongoose = require("mongoose");
+mongoose.connect("mongodb+srv://bhanderisahil:sahil%40123@cluster0.vttnglj.mongodb.net/movie",{
+    useNewUrlParser : true,
+    useUnifiedTopology : true
+}).then(()=>{
+    console.log("coonection successful");
+}).catch((err)=>{
+    console.log("connection failed",err);
+})
+
 
 app.set('views',path.join(__dirname,'views')); 
 app.set('view engine', 'ejs');

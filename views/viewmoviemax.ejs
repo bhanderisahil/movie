@@ -1,0 +1,309 @@
+<style>
+    /* Body Styles */
+    html,
+    body {
+        height: 100%;
+    }
+
+    @import url("https://fonts.googleapis.com/css?family=Luckiest+Guy");
+
+    body {
+        margin: 0 20px;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #131720;
+        display: flex;
+        /* use flexbox for layout */
+        flex-direction: column;
+        /* stack children vertically */
+        justify-content: center;
+    }
+
+    .container {
+        background:#131720;
+        border-radius: 15px;
+        /* box-shadow: 0px 10px 20px 20px rgba(0,0,0,0.17); */
+        display: inline-block;
+        padding: 30px;
+        text-align: left;
+        width: 600px;
+        margin: auto;
+    }
+
+    /* Header Styles */
+    h1 {
+        font-size: 48px;
+        font-family: "Luckiest Guy";
+        color: #333333;
+        display: block;
+        text-align: center;
+        cursor: default;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 10;
+        width: 100%;
+        height: 100px;
+    }
+
+    h1 span {
+        position: relative;
+        top: 20px;
+        display: inline-block;
+        -webkit-animation: bounce 0.6s ease infinite alternate;
+        font-size: 80px;
+        color: #fff;
+        text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc,
+            0 5px 0 #ccc, 0 6px 0 transparent, 0 7px 0 transparent, 0 8px 0 transparent,
+            0 9px 0 transparent, 0 10px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    h1 span:nth-child(2) {
+        -webkit-animation-delay: 0.1s;
+    }
+
+    h1 span:nth-child(3) {
+        -webkit-animation-delay: 0.2s;
+    }
+
+    h1 span:nth-child(4) {
+        -webkit-animation-delay: 0.3s;
+    }
+
+    h1 span:nth-child(5) {
+        -webkit-animation-delay: 0.4s;
+    }
+
+    h1 span:nth-child(6) {
+        -webkit-animation-delay: 0.5s;
+    }
+
+    h1 span:nth-child(7) {
+        -webkit-animation-delay: 0.6s;
+    }
+
+    h1 span:nth-child(8) {
+        -webkit-animation-delay: 0.2s;
+    }
+
+    h1 span:nth-child(9) {
+        -webkit-animation-delay: 0.3s;
+    }
+
+    h1 span:nth-child(10) {
+        -webkit-animation-delay: 0.4s;
+    }
+
+    h1 span:nth-child(11) {
+        -webkit-animation-delay: 0.5s;
+    }
+
+    h1 span:nth-child(12) {
+        -webkit-animation-delay: 0.6s;
+    }
+
+    h1 span:nth-child(13) {
+        -webkit-animation-delay: 0.7s;
+    }
+
+    h1 span:nth-child(14) {
+        -webkit-animation-delay: 0.8s;
+    }
+
+    /* Movie Styles */
+    .content {
+        margin-top: 5px;
+        padding: 20px;
+        background-color: #131720;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: row;
+        /* Display cards in a row */
+    }
+
+    .card {
+        margin-top: 5px;
+        padding: 20px;
+        background-color: #fdf7c3;
+        border-radius: 15px;
+        box-shadow: 0px 10px 20px 20px rgba(0, 0, 0, 0.17);
+        position: relative;
+        /* add position relative to the .content div */
+    }
+
+    .card img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 10px;
+        z-index: 1;
+        transition: opacity 0.3s ease-in-out;
+        max-width: 192px;
+    }
+
+    #song-poster {
+        height: 200px;
+        width: 200px;
+    }
+
+    #sp-icon {
+        width: 30px;
+        height: 30px;
+        opacity: 1 !important;
+    }
+
+    .card:hover img {
+        opacity: 0.3;
+        /* decrease opacity on hover */
+        background-color: #ffffff;
+    }
+
+    .card:hover {
+        background-color: #ffffff;
+    }
+
+    .card .details {
+        display: none;
+        /* hide by default */
+        position: absolute;
+        /* set position to absolute */
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        color: #000000;
+        padding: 20px;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    .card:hover .details {
+        display: block;
+    }
+
+    /* ANIMATION */
+    @-webkit-keyframes bounce {
+        100% {
+            top: -20px;
+            text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc,
+                0 5px 0 #ccc, 0 6px 0 #ccc, 0 7px 0 #ccc, 0 8px 0 #ccc, 0 9px 0 #ccc,
+                0 50px 25px rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    @media (max-width: 768px) {
+
+        /* adjust font-size for smaller screens */
+        h1 {
+            font-size: 36px;
+            height: 80px;
+            align-items: center;
+        }
+
+        h1 span {
+            font-size: 60px;
+        }
+    }
+
+    @media (max-width: 480px) {
+
+        /* adjust font-size and padding for even smaller screens */
+        h1 {
+            font-size: 24px;
+            height: 60px;
+            padding: 10px;
+            align-items: center;
+        }
+
+        h1 span {
+            font-size: 40px;
+        }
+    }
+
+    @media (max-width: 768px) {
+
+        /* stack cards vertically on smaller screens */
+        .content {
+            flex-direction: column;
+            align-items: center;
+            margin-top: 100px;
+        }
+
+        .card {
+            margin: 10px;
+            padding: 20px;
+            background-color: #fdf7c3;
+            border-radius: 15px;
+            box-shadow: 0px 10px 20px 20px rgba(0, 0, 0, 0.17);
+            position: relative;
+            /* add position relative to the .content div */
+            margin-top: 15px;
+        }
+    }
+</style>
+
+
+
+<h1>
+    <span>T</span>
+    <span>O</span>
+    <span>D</span>
+    <span>A</span>
+    <span>Y</span>
+    <span>'</span>
+    <span>S</span>
+
+    <span>m</span>
+    <span>o</span>
+    <span>v</span>
+    <span>i</span>
+    <span>e</span>
+    <span>s</span>
+
+</h1>
+<div class="container">
+    <div class="content">
+        <div class="card">
+            <img id="poster" src="<%= moviedetailes.poster %>">
+            <div class="details mv-dts">
+                <p id="title">
+                    <%=moviedetailes.title %>
+                </p>
+                <p id="year">
+                    <%=moviedetailes.year %>
+                </p>
+                <p id="year">
+                    <%=moviedetailes.text %>
+                </p>
+                <p id="year">
+                    <%=moviedetailes.type %>
+                </p>
+                <p id="year">
+                    <%=moviedetailes.quelity %>
+                </p>
+            </div>
+        </div>
+    
+            <div class="details mv-dts" style="color: white;">
+                <p id="title">
+                    <%=moviedetailes.title %>
+                </p>
+                <p id="year">
+                    <%=moviedetailes.year %>
+                </p>
+                <p id="year">
+                    <%=moviedetailes.text %>
+                </p>
+                <p id="year">
+                    <%=moviedetailes.type %>
+                </p>
+                <p id="year">
+                    <%=moviedetailes.quelity %>
+                </p>
+            </div>
+        </div>
+    </div>
+
+</div>
